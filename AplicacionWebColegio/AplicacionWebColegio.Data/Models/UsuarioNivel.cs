@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AplicacionWebColegio.Data
+namespace AplicacionWebColegio.Models
 {
-    public class Class1
+    public enum UsuarioNivel
     {
+        Administrador = 1,
+        Usuario = 2,
+        Profesor = 3
     }
 }
