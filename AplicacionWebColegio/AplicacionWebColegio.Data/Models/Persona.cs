@@ -23,9 +23,10 @@ namespace AplicacionWebColegio.Data.Models
         public string Apellidos { get; set; }
 
 
-        [Required(ErrorMessage = "El campo {0} es requerido...")]
+        [Required(ErrorMessage="El campo {0} es requerido")]
         [Display(Name = "Fecha Nacimiento")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/mm/yyyy}")]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime FechaNacimiento { get; set; }
     }
 }

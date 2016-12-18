@@ -52,6 +52,7 @@
     <Compile Include="Models\Estudiante.cs" />
     <Compile Include="Models\EstudianteSeccion.cs" />
     <Compile Include="Models\Materia.cs" />
+    <Compile Include="Models\MateriaAreasListado.cs" />
     <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\Profesor.cs" />
     <Compile Include="Models\Seccion.cs" />

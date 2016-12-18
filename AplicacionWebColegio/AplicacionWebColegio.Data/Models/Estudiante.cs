@@ -25,7 +25,7 @@ namespace AplicacionWebColegio.Data.Models
 
 
         [Display(Name = "Fecha Matriculación")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime FechaMatriculacion { get; set; }
     }
 }
