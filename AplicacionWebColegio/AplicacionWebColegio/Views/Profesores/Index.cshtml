@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<AplicacionWebColegio.Data.Models.Profesor>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Listado de Profesores";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
     @Html.ActionLink("Registrar Profesor", "Create", null, new { @class = "btn btn-primary" })
