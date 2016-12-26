@@ -1,66 +1,71 @@
 ﻿@model AplicacionWebColegio.Data.Models.Profesor
 
 @{
-    ViewBag.Title = "Detalles";
+    ViewBag.Title = "Detalle del Profesor";
+    ViewBag.PanelTitle = "Detalles";
 }
 
 <h2>@ViewBag.Title</h2>
+<hr />
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">@ViewBag.PanelTitle</h3>
+    </div>
+    <div class="panel-body">
 
-<div>
-    <h4>Profesor</h4>
-    <hr />
-    <dl class="dl-horizontal">
+        <div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombres)
-        </dt>
+            <dl class="table dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombres)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombres)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Nombres)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Apellidos)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Apellidos)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Apellidos)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Apellidos)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaNacimiento)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.FechaNacimiento)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FechaNacimiento)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FechaNacimiento)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaRegistro)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FechaRegistro)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.FechaRegistro)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Observaciones)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FechaRegistro)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Observaciones)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Observaciones)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Observaciones)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Activo)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Activo)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Activo)
-        </dd>
-
-
-    </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.Activo)
+                </dd>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
+            @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-default " })
+        </p>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
-    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-success" })
-</p>

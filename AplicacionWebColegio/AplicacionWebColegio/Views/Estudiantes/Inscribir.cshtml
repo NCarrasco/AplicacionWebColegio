@@ -1,0 +1,73 @@
+﻿@model  AplicacionWebColegio.Models.InscripcionEstudianteVM
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Inscripci&oacute;n de Estudiante</h4>
+        <hr />
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(m => m.Estudiante.Id)
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <strong>Datos del Estudiante</strong>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Estudiante.Matricula, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.Estudiante.Matricula, new { @class = "form-control", @readonly = "readonly" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Estudiante.Nombres, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.Estudiante.Nombres, new { @class = "form-control", @readonly = "readonly" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Estudiante.Apellidos, new { @class = "control-label" })
+                    @Html.TextBoxFor(m => m.Estudiante.Apellidos, new { @class = "form-control", @readonly = "readonly" })
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <strong>Secciones a Inscribir</strong>
+                <div class="section-container">
+                    @for (int i = 0; i < Model.Secciones.Count; i++)
+                    {
+                        <div class="section-input">
+                            <div class="form-group">
+                                <label class="control-label">Seccion</label>
+                                @Html.DropDownListFor(m => Model.Secciones[i].SeccionId, Model.ListaSecciones, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => Model.Secciones[i].SeccionId)
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-8 col-md-4">
+                <button type="button" id="add-section" class="btn btn-info">Agregar Seccion</button>
+                <input type="submit" value="Inscribir" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-default"})
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(function () {
+            $('#add-section').click(onAddSectionClick);
+
+            function onAddSectionClick() {
+                $('.section-container').append($('.section-input').first().clone());
+            }
+        })
+    </script>
+}

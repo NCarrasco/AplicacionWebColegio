@@ -1,75 +1,81 @@
 ﻿@model AplicacionWebColegio.Data.Models.Estudiante
 
 @{
-    ViewBag.Title = "Eliminar";
+    ViewBag.Title = "Eliminar Estudiante";
+    ViewBag.PanelTitle = "Detalles";
 }
 
-<h2>@ViewBag.Title </h2>
+<h2>@ViewBag.Title</h2>
+<hr />
+<h3 class="h3" style="color:red">¿Estás seguro que desea eliminar este registro?</h3>
 
-<h3 class="h3" style="color:red">¿Estás seguro que quieres eliminar este Estudiante?</h3>
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Matricula)
-        </dt>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">@ViewBag.PanelTitle</h3>
+    </div>
+    <div class="panel-body">
 
-        <dd>
-            @Html.DisplayFor(model => model.Matricula)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombres)
-        </dt>
+        <div>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Matricula)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombres)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Matricula)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombres)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Apellidos)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Nombres)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Apellidos)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Apellidos)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaNacimiento)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Apellidos)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.FechaNacimiento)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaMatriculacion)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FechaNacimiento)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.FechaMatriculacion)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Observaciones)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FechaNacimiento)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FechaMatriculacion)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Observaciones)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.FechaMatriculacion)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Observaciones)
+                </dt>
 
+                <dd>
+                    @Html.DisplayFor(model => model.Observaciones)
+                </dd>
+            </dl>
 
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-default" })
+                </div>
+                <div>
 
-    </dl>
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger" />
-            @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-success" })
+                </div>
+            }
         </div>
-    <div>
 
     </div>
-    }
 </div>

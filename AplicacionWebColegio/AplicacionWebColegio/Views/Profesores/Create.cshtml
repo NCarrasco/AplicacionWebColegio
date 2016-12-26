@@ -1,7 +1,8 @@
 ﻿@model AplicacionWebColegio.Data.Models.Profesor
 
 @{
-    ViewBag.Title = "Registrar";
+    ViewBag.Title = "Registrar Profesor";
+    ViewBag.PanelTitle = "Profesor";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -11,22 +12,22 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Profesor</h4>
-        <hr />
-
-        @Html.Partial("_CreatingEditing")
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
+    <div class="panel-body">
+        <div class="form-horizontal">
+            @Html.Partial("_CreatingEditing")
+            <hr />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Registrar" class="btn btn-primary" />
+                </div>
             </div>
         </div>
     </div>
+
 }
 
 <div>
-    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-success" })
+    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-default " })
 </div>
 
 @section Scripts {

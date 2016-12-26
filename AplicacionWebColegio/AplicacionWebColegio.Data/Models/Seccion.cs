@@ -14,9 +14,10 @@ namespace AplicacionWebColegio.Data.Models
         public int Id { get; set; }
 
 
+        [Display(Name = "Profesor")]
         public int ProfesorId { get; set; }
 
-
+        [Display(Name = "Materia")]
         public int MateriaId { get; set; }
 
 
@@ -32,7 +33,7 @@ namespace AplicacionWebColegio.Data.Models
         public string Ubicacion { get; set; }
 
 
-        [Display(Name = "Máximo de Estudiante")]
+        [Display(Name = "Máx. de Estudiantes")]
         //[Range(5, Int32.MinValue,ErrorMessage = "El valor mínimo del {0} es de {1}")]
         //[MaxLength(35,ErrorMessage = "Cantidad del {0} es de {1}")]
         public int? MaximoEstudiantes { get; set; }
@@ -45,7 +46,7 @@ namespace AplicacionWebColegio.Data.Models
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime FechaRegistro { get; set; }
 
-
+        [DataType(DataType.MultilineText)]
         [StringLength(500, ErrorMessage = "La longitud máxima del campo {0} es {1}")]
         [Display(Name = "Observaciones")]
         public string Observaciones { get; set; }
