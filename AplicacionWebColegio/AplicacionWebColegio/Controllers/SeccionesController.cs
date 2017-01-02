@@ -18,8 +18,15 @@ namespace AplicacionWebColegio.Controllers
         // GET: Secciones
         public ActionResult Index()
         {
-            var seccions = dbContext.Secciones.Include(s => s.Materia).Include(s => s.Profesor);
-            return View(seccions.ToList());
+            var secciones = dbContext.Secciones.Include(
+                s => s.Materia)
+                .Include(s => s.Profesor).ToList();
+
+            //var seccions = dbContext.Secciones.Include(s => s.Materia).Include(s => s.Profesor);
+            //return View(seccions.ToList());
+
+            return View(secciones);
+
         }
 
         // GET: Secciones/Details/5
@@ -48,6 +55,8 @@ namespace AplicacionWebColegio.Controllers
             seccion.FechaRegistro = DateTime.Now;
             seccion.Activa = true;
             return View(seccion);
+
+            //return View();
         }
 
         // POST: Secciones/Create
@@ -59,7 +68,7 @@ namespace AplicacionWebColegio.Controllers
         {
             if (ModelState.IsValid)
             {
-                seccion.FechaRegistro = DateTime.Now;
+                seccion.FechaRegistro = DateTime.Today;
 
                 dbContext.Secciones.Add(seccion);
                 dbContext.SaveChanges();
@@ -69,6 +78,7 @@ namespace AplicacionWebColegio.Controllers
             ViewBag.MateriaId = new SelectList(dbContext.Materias, "Id", "Nombre", seccion.MateriaId);
             ViewBag.ProfesorId = new SelectList(dbContext.Profesores, "Id", "Nombres", seccion.ProfesorId);
             return View(seccion);
+
         }
 
         // GET: Secciones/Edit/5
@@ -86,6 +96,7 @@ namespace AplicacionWebColegio.Controllers
             ViewBag.MateriaId = new SelectList(dbContext.Materias, "Id", "Nombre", seccion.MateriaId);
             ViewBag.ProfesorId = new SelectList(dbContext.Profesores, "Id", "Nombres", seccion.ProfesorId);
             return View(seccion);
+
         }
 
         // POST: Secciones/Edit/5
@@ -104,6 +115,7 @@ namespace AplicacionWebColegio.Controllers
             ViewBag.MateriaId = new SelectList(dbContext.Materias, "Id", "Nombre", seccion.MateriaId);
             ViewBag.ProfesorId = new SelectList(dbContext.Profesores, "Id", "Nombres", seccion.ProfesorId);
             return View(seccion);
+
         }
 
         // GET: Secciones/Delete/5
@@ -131,14 +143,5 @@ namespace AplicacionWebColegio.Controllers
             dbContext.SaveChanges();
             return RedirectToAction("Index");
         }
-
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        dbContext.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
     }
 }

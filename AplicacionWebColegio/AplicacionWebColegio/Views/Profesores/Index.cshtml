@@ -6,6 +6,8 @@
 
 <h2>@ViewBag.Title</h2>
 
+<br />
+
 <p>
     @Html.ActionLink("Registrar Profesor", "Create", null, new { @class = "btn btn-primary" })
 </p>
@@ -17,9 +19,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Apellidos)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaNacimiento)
-        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.FechaNacimiento)
+            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.FechaRegistro)
         </th>
@@ -42,9 +44,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Apellidos)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaNacimiento)
-            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.FechaRegistro)
             </td>
@@ -57,11 +59,29 @@
 
 
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" })
-                @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" })
+                @*@Html.ActionLink("Detalle", "Details", new { id = item.Id }, new { @class = "btn btn-info" })*@
+                <a href="#" class="btn btn-info btnDetalhes" data-value="@item.Id">Details</a>
+                @*@Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })*@
+                <a href="#" class="btn btn-danger btnDelete" data-value="@item.Id">Eliminar</a>
             </td>
         </tr>
     }
 
 </table>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div id="modal"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+@section scripts{
+
+<script src="~/Scripts/Profesor/Profesor.js"></script>
+
+}

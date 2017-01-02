@@ -1,7 +1,7 @@
 ﻿@model AplicacionWebColegio.Data.Models.Seccion
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Registrar Sección";
 }
 
 <h2>Create</h2>
@@ -18,14 +18,14 @@
         @Html.Partial("_CreatingEditing")
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <input type="submit" value="Registrar" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Regresar", "Index", null, new { @class= "btn btn-success"})
+    @Html.ActionLink("Regresar", "Index", null, new { @class= "btn btn-default "})
 </div>
 
 @section Scripts {

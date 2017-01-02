@@ -1,4 +1,5 @@
 ﻿using AplicacionWebColegio.Data.Models;
+using AplicacionWebColegio.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,7 +12,11 @@ namespace AplicacionWebColegio.DataAccess
     public class AplicacionWebColegioDbContext : DbContext
     {
         public AplicacionWebColegioDbContext() 
-            : base("AplicacionWebColegio") { }
+            : base("AplicacionWebColegio") {
+
+                this.Configuration.LazyLoadingEnabled = false;
+        
+        }
 
         public DbSet<Estudiante> Estudiantes { get; set; }
 
@@ -22,5 +27,7 @@ namespace AplicacionWebColegio.DataAccess
         public DbSet<Seccion> Secciones { get; set; }
 
         public DbSet<Profesor> Profesores { get; set; }
+
+        public DbSet<EstudianteSeccion> EstudiantesSeccion { get; set; }
     }
 }

@@ -16,10 +16,11 @@ namespace AplicacionWebColegio.Data.Models
 
         [Required(ErrorMessage = "El campo {0} es requerido...")]
         [Display(Name = "Matrícula")]
+        //[Range(5,10, ErrorMessage = "El campo {0} debe tener un numero entre {1} y {2}")] //aqui validamos el rango del campo, entre un minimo y un maximo!
         [StringLength(10, ErrorMessage = "La longitud máxima del campo {0} es de {1}")]
         public string Matricula { get; set; }
 
-
+        [DataType(DataType.MultilineText)]
         [StringLength(800, ErrorMessage = "La longitud máxima del campo {0} es de {1}")]
         public string Observaciones { get; set; }
 

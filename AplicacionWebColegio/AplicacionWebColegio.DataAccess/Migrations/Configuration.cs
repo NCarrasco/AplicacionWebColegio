@@ -5,15 +5,16 @@ namespace AplicacionWebColegio.DataAccess.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<AplicacionWebColegio.DataAccess.AplicacionWebColegioDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<AplicacionWebColegioDbContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true; //Automatizar las Migraciones
             ContextKey = "AplicacionWebColegio.Models.AplicacionWebColegioDbContext";
         }
 
-        protected override void Seed(AplicacionWebColegio.DataAccess.AplicacionWebColegioDbContext context)
+        protected override void Seed(AplicacionWebColegioDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

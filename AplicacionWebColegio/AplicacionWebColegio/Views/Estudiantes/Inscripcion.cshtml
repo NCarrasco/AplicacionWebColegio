@@ -1,0 +1,42 @@
+﻿@model  AplicacionWebColegio.Models.InscripcionEstudianteVM
+
+<div>
+    <h4>Inscripci&oacute;n Estudiante</h4>
+    <hr />
+
+    <strong>Datos del Estudiante</strong>
+
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(m=> m.Estudiante.Matricula)</dt>
+        <dt>@Html.DisplayFor(m=> m.Estudiante.Matricula)</dt>
+        <dt>@Html.DisplayNameFor(m=> m.Estudiante.Nombres)</dt>
+        <dt>@Html.DisplayFor(m=> m.Estudiante.Nombres)</dt>
+        <dt>@Html.DisplayNameFor(m=> m.Estudiante.Apellidos)</dt>
+        <dt>@Html.DisplayFor(m=> m.Estudiante.Apellidos)</dt>
+    </dl>
+
+    <hr />
+
+    <strong>Materias Inscritas</strong>
+    <br />
+
+    <table class="table">
+        <tr>
+            <th>Materia</th>
+            <th>Seccion</th>
+            <th>Profesor</th>
+            <th>Calificaci&oacute;n</th>
+            <th>Estado</th>
+        </tr>
+        @foreach (var seccion in Model.Secciones)
+        {
+            <tr>
+                <td>@seccion.Seccion.Materia</td>
+                <td>@seccion.Seccion.Nombre</td>
+                <td>@seccion.Seccion.Profesor.Nombres @seccion.Seccion.Profesor.Apellidos</td>
+                <td>@seccion.Calificacion</td>
+                <td>@seccion.Estado</td>
+            </tr>
+        }
+    </table>
+</div>

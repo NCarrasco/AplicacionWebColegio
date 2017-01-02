@@ -26,7 +26,8 @@ namespace AplicacionWebColegio
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                         "~/Content/bootstrap-datepicker.css",
-                        "~/Content/site.css"));
+                        "~/Content/site.css",
+                        "~/Content/modern-business.css"));
         }
     }
 }

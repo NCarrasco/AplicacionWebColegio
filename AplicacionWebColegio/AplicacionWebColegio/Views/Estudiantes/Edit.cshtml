@@ -1,7 +1,8 @@
 ﻿@model AplicacionWebColegio.Data.Models.Estudiante
 
 @{
-    ViewBag.Title = "Editar";
+    ViewBag.Title = "Editar Estudiante";
+    ViewBag.PanelTitle = "Estudiante";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -12,7 +13,6 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Estudiante</h4>
         <hr />
 
         @Html.Partial("_CreatingEditing")
@@ -26,7 +26,7 @@
 }
 
 <div>
-    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-success" })
+    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-default " })
 </div>
 
 @section Scripts {

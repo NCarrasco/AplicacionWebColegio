@@ -13,6 +13,7 @@ namespace AplicacionWebColegio.Data.Models
     {
         public int Id { get; set; }
 
+        [DataType(DataType.MultilineText)]
         [StringLength(800, ErrorMessage = "La longitud máxima del campo {0} es {1}")]
         public string Observaciones { get; set; }
 

@@ -13,7 +13,8 @@ namespace AplicacionWebColegio
     {
         public static void ConfiguredDb()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<AplicacionWebColegioDbContext, Configuration>());
+            Database.SetInitializer(
+                new MigrateDatabaseToLatestVersion<AplicacionWebColegioDbContext, Configuration>());
         }
     }
 }
