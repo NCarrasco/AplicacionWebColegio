@@ -18,8 +18,14 @@ namespace AplicacionWebColegio.Controllers
         // GET: Profesores
         public ActionResult Index()
         {
-            var estudiante = dbContext.Profesores.ToList();
-            return View(estudiante);
+
+            List<Profesor> list = dbContext.Profesores.ToList();
+            //ViewBag.ProfesorList = new SelectList(list, "Observaciones", "Activo", "FechaRegistro", "Nombres", "Apellidos", "FechaNacimiento");
+
+            return View(list);
+
+            //var estudiante = dbContext.Profesores.ToList();
+            //return View(estudiante);
         }
 
         // GET: Profesores/Details/5
@@ -29,12 +35,12 @@ namespace AplicacionWebColegio.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Profesor profesor = dbContext.Profesores.Find(id);
+            var profesor = dbContext.Profesores.Find(id);
             if (profesor == null)
             {
                 return HttpNotFound();
             }
-            return View(profesor);
+            return PartialView(profesor);
         }
 
         // GET: Profesores/Create

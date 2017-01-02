@@ -38,7 +38,7 @@
     {
         <tr>
             <td>@Html.DisplayFor(modelItem => estudiante.Matricula)</td>
-            <td>@Html.DisplayFor(modelItem => estudiante.FechaMatriculacion)/td>
+            <td>@Html.DisplayFor(modelItem => estudiante.FechaMatriculacion)</td>
             <td>@Html.DisplayFor(modelItem => estudiante.Nombres)</td>
             <td> @Html.DisplayFor(modelItem => estudiante.Apellidos)</td>
             <td>@Html.DisplayFor(modelItem => estudiante.FechaNacimiento)</td>
@@ -55,7 +55,7 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                        <li>@Html.ActionLink("Inscripción", "Inscripcion", new { id = estudiante.Id }, new { data_modal = "" })</li>
+                        <li>@Html.ActionLink("Inscripción", "Inscripcion", new { id = estudiante.Id }, new { data_modal = "" }) </li>
                         <li class="divider"></li>
                         <li>@Html.ActionLink("Editar", "Edit", new { id = estudiante.Id }, new { data_modal = "" })</li>
                         <li>@Html.ActionLink("Detalles", "Details", new { id = estudiante.Id }, new { data_modal = "" })</li>
